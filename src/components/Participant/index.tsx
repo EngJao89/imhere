@@ -2,14 +2,18 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import { styles } from './style';
 
-export function Participant() {
+type Props = {
+  name: string;
+}
+
+export function Participant({ name }: Props) {
   function handleParticipantDelete(){ 
     console.log("Você clicou no botão de Deletar!");
   }
   return (
     <View style={styles.container}>
       <Text style={styles.name}>
-        João Ricardo(Mobile Architect)
+        { name }
       </Text>
       <TouchableOpacity 
         style={styles.button} 
