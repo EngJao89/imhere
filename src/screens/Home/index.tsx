@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { 
   Text, 
   View, 
@@ -11,27 +12,14 @@ import { styles } from './styles';
 import { Participant } from '../../components/Participant';
 
 export function Home(){
-  const participants = [
-    'Joao Ricardo', 
-    'Rafaela', 
-    'Henry', 
-    'Miguel', 
-    'Carmelita', 
-    'Crystiano', 
-    'Vinycius', 
-    'Jeff', 
-    'Renato', 
-    'Guilherme',
-    'Matheus',
-    'Glauber',
-    'Tauan'
-];
+  const [participants, setParticipants] = useState(['João Ricardo']);
 
   function handleParticipantAdd(){ 
     if(participants.includes("Joao")){
       return Alert.alert("Participante existente","O nome do participante já está sendo usado.");
     }
     Alert.alert("Você adicionou um novo participante!");
+    setParticipants(prevState => [...prevState,'José']);
   }
 
   function handleParticipantRemove(name: string){ 
